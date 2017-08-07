@@ -1,0 +1,13 @@
+freeze:
+  command-on-leave: 'ban %player% Leaving on freeze.'
+  message-on-freeze:
+    - '&6------------------------'
+    - '     &cYou are frozen.    '
+    - '&cGo to our ts ts.myts.com'
+    - '&6------------------------'
+  freeze-inventory-item-name: '&cYou are frozen.'
+  freeze-inventory-item-lore:
+    - '&6--------------'
+    - '&cYou are frozen.'
+    - '&6--------------'
+  freeze-inventory-name: '&cYou are frozen!'

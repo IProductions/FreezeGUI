@@ -1,0 +1,8 @@
+name: FreezeUI
+version: 1.0
+description: FreezeUI
+main: com.freezeui.iproductionsmc.FreezeUI
+commands:
+   freeze:
+     description: Freeze a player.
+     aliases: [petrificustotalus,icethem]
