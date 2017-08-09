@@ -24,7 +24,7 @@ public class FreezeCommand implements CommandExecutor {
                 if (args.length == 1) {
 
                     Player target = Bukkit.getPlayer(args[0]);
-                    if(target != null) {
+                    if (target != null) {
 
                         FreezeUI.getInstance().getFreezeHandler().freezePlayer(target);
 
@@ -45,8 +45,7 @@ public class FreezeCommand implements CommandExecutor {
                             return true;
 
                         }
-                    }
-                    else {
+                    } else {
                         sender.sendMessage(ChatColor.RED + "Player is offline.");
                     }
                 } else {

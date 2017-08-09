@@ -33,7 +33,7 @@ public class FreezeUI extends JavaPlugin {
         instance = this;
         freezeHandler = new FreezeHandler();
 
-        Bukkit.getPluginManager().registerEvents(freezeHandler,this);
+        Bukkit.getPluginManager().registerEvents(freezeHandler, this);
         getCommand("freeze").setExecutor(new FreezeCommand());
 
     }

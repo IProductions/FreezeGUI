@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class FreezeHandler implements Listener{
+public class FreezeHandler implements Listener {
 
     @Getter
     private List<UUID> frozenUsers = new ArrayList<>();
@@ -117,37 +117,42 @@ public class FreezeHandler implements Listener{
         }
 
     }
-    @EventHandler
-    public void attack(EntityDamageByEntityEvent e){
 
-        if(isFrozenUUID(e.getDamager().getUniqueId()) || isFrozenUUID(e.getEntity().getUniqueId())) e.setCancelled(true);
+    @EventHandler
+    public void attack(EntityDamageByEntityEvent e) {
+
+        if (isFrozenUUID(e.getDamager().getUniqueId()) || isFrozenUUID(e.getEntity().getUniqueId()))
+            e.setCancelled(true);
 
     }
-    @EventHandler
-    public void drop(PlayerDropItemEvent e){
 
-        if(isFrozen(e.getPlayer())) e.setCancelled(true);
+    @EventHandler
+    public void drop(PlayerDropItemEvent e) {
+
+        if (isFrozen(e.getPlayer())) e.setCancelled(true);
 
     }
-    @EventHandler
-    public void destroy(BlockBreakEvent e){
 
-     if(isFrozen(e.getPlayer())) e.setCancelled(true);
+    @EventHandler
+    public void destroy(BlockBreakEvent e) {
+
+        if (isFrozen(e.getPlayer())) e.setCancelled(true);
 
     }
-    @EventHandler
-    public void quit(PlayerQuitEvent e){
 
-        if(isFrozen(e.getPlayer())) {
+    @EventHandler
+    public void quit(PlayerQuitEvent e) {
+
+        if (isFrozen(e.getPlayer())) {
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), FreezeUI.getInstance().getConfig().getString("freeze.command-on-leave").replaceAll("%player%", e.getPlayer().getName()));
             freezePlayer(e.getPlayer());
         }
     }
-    @EventHandler
-    public void click(InventoryClickEvent e){
-        if(isFrozenUUID(e.getWhoClicked().getUniqueId())) e.setCancelled(true);
-    }
 
+    @EventHandler
+    public void click(InventoryClickEvent e) {
+        if (isFrozenUUID(e.getWhoClicked().getUniqueId())) e.setCancelled(true);
+    }
 
 
 }
